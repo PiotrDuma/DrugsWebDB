@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+ 	id 'application'
+ 	id 'eclipse'
+ 	id 'org.springframework.boot' version '2.2.0.RELEASE'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.18'
+    compile 'org.apache.commons:commons-math3:3.6.1'
+//    compile group: 'org.springframework', name: 'spring-web', version: '5.2.1.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.0.RELEASE'
+    compile group: 'org.json', name: 'json', version: '20190722'
+ //   testCompile 'com.github.PiotrDuma.DrugsWebDB.DatabaseTest'
+    testImplementation 'junit:junit:4.12'
+}
+
+jar{
+	from configurations.compile.collect { zipTree it} 
+	manifest.attributes "Main-Class": 'com.github.PiotrDuma.DrugsWebDB.Database'
+}
+
+eclipse {
+    project {
+        name = 'DrugsWebDB'
+    }
+}
+
+application {
+	mainClassName = 'com.github.PiotrDuma.DrugsWebDB.WebApp' 
+}
+
+
+
