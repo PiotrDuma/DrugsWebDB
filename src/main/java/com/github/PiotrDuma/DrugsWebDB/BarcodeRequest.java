@@ -11,7 +11,6 @@ public class BarcodeRequest {
 	public String getValue(@PathVariable long barcode) {
 		Drug drug = Database.getDrugByBarcode(barcode);
 		String response = drug.toJSON().toString();
-		System.out.println(drug.toJSON());
 		return response;
 	}
 	
