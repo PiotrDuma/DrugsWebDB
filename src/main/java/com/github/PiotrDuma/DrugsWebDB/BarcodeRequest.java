@@ -10,7 +10,7 @@ public class BarcodeRequest {
 	@RequestMapping("/DrugsWebDB/{barcode}")
 	public String getValue(@PathVariable long barcode) {
 		Drug drug = Database.getDrugByBarcode(barcode);
-		String response = drug.toJSON().toString();
+		String response = (drug==null)?"Nothing found.":drug.toJSON().toString();
 		return response;
 	}
 	

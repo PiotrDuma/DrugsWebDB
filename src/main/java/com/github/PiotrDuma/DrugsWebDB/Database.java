@@ -47,7 +47,6 @@ public class Database {
     	try {
     	connection = getConnection();
     	String statement = "SELECT drugs.Nazwa_handlowa, drugs.Producent, drugs.Dawka, drugs.Opakowanie FROM drugs WHERE drugs.Nazwa_handlowa LIKE '%"+ name+ "%'";
-    	System.out.println(statement);
     	PreparedStatement preparedStatement = connection.prepareStatement(statement);
     	ResultSet resultSet = preparedStatement.executeQuery();
     	

@@ -1,6 +1,6 @@
 package com.github.PiotrDuma.DrugsWebDB;
 import org.json.*;
-public class Drug {
+public class Drug implements JSONConvert {
 	private String name;
 	private String producent;
 	private String dose;
@@ -75,6 +75,8 @@ public class Drug {
 		stringBuilder.append(this.contents);
 		return stringBuilder.toString();
 	}
+	
+	@Override
 	public JSONObject toJSON() {
 		JSONObject object = new JSONObject();
 		
