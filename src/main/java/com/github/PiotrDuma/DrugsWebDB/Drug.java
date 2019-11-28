@@ -55,23 +55,25 @@ public class Drug implements JSONConvert {
 		return this.name;
 	}
 	public String getProducent() {
-		return this.name;
+		return this.producent;
 	}
 	public String getDose() {
-		return this.name;
+		return this.dose;
 	}
 	public String getContents() {
-		return this.name;
+		return this.contents;
 	}
+	
+	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("name: ");
 		stringBuilder.append(this.name);
-		stringBuilder.append(" ,producent: ");
+		stringBuilder.append(", producent: ");
 		stringBuilder.append(this.producent);
-		stringBuilder.append(" ,dose: ");
+		stringBuilder.append(", dose: ");
 		stringBuilder.append(this.dose);
-		stringBuilder.append(" ,contents: ");
+		stringBuilder.append(", contents: ");
 		stringBuilder.append(this.contents);
 		return stringBuilder.toString();
 	}

@@ -16,7 +16,11 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.0.RELEASE'
     compile group: 'org.json', name: 'json', version: '20190722'
- //   testCompile 'com.github.PiotrDuma.DrugsWebDB.DatabaseTest'
+ 
+ 
+ 	//TESTS
+    // https://mvnrepository.com/artifact/org.mockito/mockito-core
+	testCompile group: 'org.mockito', name: 'mockito-core', version: '3.1.0'
     testImplementation 'junit:junit:4.12'
 }
 
